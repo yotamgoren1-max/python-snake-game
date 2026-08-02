@@ -5,8 +5,8 @@ RED = (255, 0, 0)
 WHITE = (255, 255, 255)
 
 #screen settings:
-WINDOW_WIDTH = 800
-WINDOW_HEIGHT = 800
+WINDOW_WIDTH = 600
+WINDOW_HEIGHT = 600
 CELL_SIZE = 20  #set the pixel size
 
 #clock settings: 5 leve, for every 5 apples boost the speed by 3 FPS
