@@ -1,16 +1,32 @@
+import time
+
 import pygame #imports
 import config
 import game_objects
 pygame.init()  #starting the pygame Tools
-screen=pygame.display.set_mode() #creates the monitor
+screen=pygame.display.set_mode((config.WINDOW_WIDTH,config.WINDOW_HEIGHT)) #creates the monitor
+pygame.display.set_caption("python-Snake-Game")
 running=True
+clock=pygame.time.Clock() #creating the clock
+curr_score=0 #number of apples
+
+test_surface=pygame.Surface((100,100))
+test_surface.fill(config.RED)
 
 while running: #the main loop of the game
     for event in pygame.event.get(): #check for every event possible
         if event.type == pygame.QUIT:
             running = False # if the event is QUIT End the loop
 
+    screen.blit(test_surface,(200,100))
+
+    curr_level=(curr_score//5)+1 #start from level 1
+    curr_fps=min(config.INITIAL_FPS+(curr_score//5 * config.SPEED_BOOST_PER_LEVEL),config.MAX_FPS)
+    clock.tick(curr_fps)
+
 
 
 
     pygame.display.update() #update the screen for each event
+
+pygame.quit() #end the pygame init func
